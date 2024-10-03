@@ -12,4 +12,12 @@ public class WelcomeController {
 	    System.out.println("test method called");
 	    return "working fine";
 	}
+	
+	@RequestMapping("/t2")
+	public String test2() {
+	    System.out.println("test 2 method called");
+	    return "testing 2 fine";
+	}
+	
+
 }
