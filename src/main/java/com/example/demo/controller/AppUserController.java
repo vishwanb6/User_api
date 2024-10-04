@@ -31,13 +31,14 @@ public class AppUserController {
 	 @Autowired
     private AppUserService userService;
 
-    @GetMapping
+    @GetMapping("/")
     public List<AppUser> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public AppUser createUser(@RequestBody AppUserDto userDTO) {
+    	System.out.println("post method");
         return userService.createUser(userDTO);
     }
 

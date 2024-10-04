@@ -22,12 +22,12 @@ public class RoleController {
 	   @Autowired
 	    private RoleService roleService;
 
-	    @GetMapping
+	    @GetMapping("/")
 	    public List<Role> getAllRoles() {
 	        return roleService.getAllRoles();
 	    }
 
-	    @PostMapping
+	    @PostMapping("/create")
 	    public Role createRole(@RequestBody Role role) {
 	        return roleService.createRole(role);
 	    }
