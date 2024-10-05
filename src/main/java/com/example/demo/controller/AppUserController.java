@@ -26,15 +26,21 @@ public class AppUserController {
 	    System.out.println("test method called");
 	    return "working fine";
 	}
-	
+	@PostMapping("/t1")
+    public String createUser1() {
+    	System.out.println("post method");
+        return "post is working";
+    }
 		
 	 @Autowired
     private AppUserService userService;
 
     @GetMapping("/")
     public List<AppUser> getAllUsers() {
+    	System.out.println("getAllUsers controller...");
         return userService.getAllUsers();
     }
+    
 
     @PostMapping("/register")
     public AppUser createUser(@RequestBody AppUserDto userDTO) {
@@ -42,6 +48,8 @@ public class AppUserController {
         return userService.createUser(userDTO);
     }
 
+    
+    
     @GetMapping("/{id}")
     public ResponseEntity<AppUser> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.getUserById(id));

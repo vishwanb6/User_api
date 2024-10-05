@@ -7,6 +7,7 @@ public class AppUserDto {
 	private Long id;
     private String name;
     private String email;
+    private String pswd;
     private Set<Long> roleIds;
     
     
@@ -34,10 +35,19 @@ public class AppUserDto {
 	public void setRoleIds(Set<Long> roleIds) {
 		this.roleIds = roleIds;
 	}
+	public String getPswd() {
+		return pswd;
+	}
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
+	}
 	@Override
 	public String toString() {
-		return "AppUserDto [id=" + id + ", name=" + name + ", email=" + email + ", roleIds=" + roleIds + "]";
+		return "AppUserDto [id=" + id + ", name=" + name + ", email=" + email + ", pswd=" + pswd + ", roleIds="
+				+ roleIds + "]";
 	}
+	
+	
     
     
 }

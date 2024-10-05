@@ -24,7 +24,10 @@ public class AppUser {
     @Column(name = "email", length = 100, nullable = false, unique = true) // Set size, nullability, and uniqueness
     private String email;
 
-    @ManyToMany
+    @Column(name = "password", nullable = false)
+    private String pswd;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "user_roles",
         joinColumns = @JoinColumn(name = "user_id"),
@@ -82,6 +85,36 @@ public class AppUser {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getPswd() {
+		return pswd;
+	}
+
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", name=" + name + ", email=" + email + ", pswd=" + pswd + ", roles=" + roles
+				+ ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
     
       

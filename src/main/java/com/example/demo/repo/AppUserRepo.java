@@ -6,4 +6,5 @@ import com.example.demo.entities.AppUser;
 
 public interface AppUserRepo extends JpaRepository<AppUser, Long> {
 
+	AppUser findByName(String name);
 }
