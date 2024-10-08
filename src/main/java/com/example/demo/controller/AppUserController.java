@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.AppUserDto;
+import com.example.demo.dto.LoginRequest;
 import com.example.demo.entities.AppUser;
 import com.example.demo.service.AppUserService;
 
@@ -48,6 +49,19 @@ public class AppUserController {
         return userService.createUser(userDTO);
     }
 
+    // below is optional 
+   /* @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        System.out.println("Login request: " + loginRequest);
+        try {
+            String response = userService.login(loginRequest);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body("Login failed: " + e.getMessage());
+        }
+    }
+    */
+    
     
     
     @GetMapping("/{id}")
